@@ -1,0 +1,16 @@
+<div class="container pt-5 d-flex flex-column text-center">
+    <h5>
+        Enter an ingredient list list for what you are cooking, like "1 cup rice, 10 oz chickpeas", etc
+    </h5>
+    <span>Enter each ingredient on a new line.</span>
+    <div class="d-flex flex-column align-items-center">
+        <div class="col-md-8 col-12">
+            <textarea rows="7" class="w-100" [(ngModel)]="ingredients" placeholder="ex: 1 cup rice,&#10;10 oz chickpeas"></textarea>
+        </div>
+        <span *ngIf="invalid">please follow sytanx (food name, quantity, unit)</span>
+        <div class="pt-3 d-flex justify-content-around w-50">
+            <button type="button" (click)="analyze()" [disabled]="!ingredients" class="btn btn-success">Analyze</button>
+            <button type="button" (click)="reset()" [disabled]="!ingredients" class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+</div>
